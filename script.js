@@ -101,7 +101,7 @@ PARTIAL_KEY = "AKIA"
         });
 
         if (foundCredentialsGlobal.length > 0) {
-            let resultsHtml = '<p>認証情報が見つかりました:</p><ul>';
+            let resultsHtml = '<p>Credentials found:</p><ul>';
             foundCredentialsGlobal.forEach(cred => {
                 resultsHtml += `<li><strong>${cred.type}</strong>: ${cred.value} (行: ${cred.lineNumber})</li>`;
             });
@@ -140,7 +140,7 @@ PARTIAL_KEY = "AKIA"
                 });
 
                 codeInput.value = currentCode;
-                resultsArea.innerHTML = '<p>認証情報がマスクされました。</p>';
+                resultsArea.innerHTML = '<p>Credentials redacted.</p>';
                 // マスク後はボタンを削除
                 maskButtonDynamic.remove();
                 foundCredentialsGlobal = []; // マスク後は認証情報リストをクリア
@@ -159,7 +159,7 @@ PARTIAL_KEY = "AKIA"
         const generatedCode = `import boto3\n\n# This is a dummy AWS Access Key ID\nAWS_ACCESS_KEY_ID = "${newAccessKeyId}"\n\n# This is a dummy AWS Secret Access Key\nAWS_SECRET_ACCESS_KEY = "${newSecretAccessKey}"\n\ndef get_s3_client():\n    s3 = boto3.client(\n        's3',\n        aws_access_key_id=AWS_ACCESS_KEY_ID,\n        aws_secret_access_key=AWS_SECRET_ACCESS_KEY\n    )\n    return s3\n`;
 
         codeInput.value = generatedCode;
-        resultsArea.innerHTML = '<p>新しい認証情報が生成され、コードエリアに表示されました。</p>';
+        resultsArea.innerHTML = '<p>New credentials generated and displayed in the code area.</p>';
         // マスクボタンが存在すれば削除
         const existingMaskButton = resultsArea.querySelector('.mask-button-dynamic');
         if (existingMaskButton) {
@@ -180,7 +180,7 @@ PARTIAL_KEY = "AKIA"
             const reader = new FileReader();
             reader.onload = (e) => {
                 codeInput.value = e.target.result;
-                resultsArea.innerHTML = '<p>ファイルが正常に読み込まれました。</p>';
+                resultsArea.innerHTML = '<p>File loaded successfully.</p>';
                 // マスクボタンが存在すれば削除
                 const existingMaskButton = resultsArea.querySelector('.mask-button-dynamic');
                 if (existingMaskButton) {
@@ -189,7 +189,7 @@ PARTIAL_KEY = "AKIA"
                 foundCredentialsGlobal = []; // 認証情報リストをクリア
             };
             reader.onerror = (e) => {
-                resultsArea.innerHTML = '<p>ファイルの読み込み中にエラーが発生しました。</p>';
+                resultsArea.innerHTML = '<p>Error reading file.</p>';
                 console.error("File reading error:", e);
             };
             reader.readAsText(file);

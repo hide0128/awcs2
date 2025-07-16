@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 14px; /* 全体的に小さく */
+    font-size: 16px; /* 全体的に大きく */
     background-color: #f0f0f0; /* 非常に薄いグレー */
     color: #333333; /* 濃いグレー、ほぼ黒 */
     display: flex;
@@ -25,12 +25,12 @@ body {
 h1 {
     color: #007bff; /* 標準的な青 */
     margin-bottom: 20px;
-    font-size: 2.2em; /* h1のフォントサイズ調整 */
+    font-size: 2.5em; /* h1のフォントサイズ調整 */
 }
 
 .section-title {
     color: #333333; /* 濃いグレー、ほぼ黒 */
-    font-size: 1.6em; /* フォントサイズを調整 */
+    font-size: 1.8em; /* フォントサイズを調整 */
     font-weight: bold;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -48,27 +48,30 @@ h1 {
     border-radius: 4px;
     resize: vertical;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 13px; /* コード入力のフォントサイズ調整 */
+    font-size: 15px; /* コード入力のフォントサイズ調整 */
 }
 
 #scan-button,
 #generate-button,
 #import-button {
-    background-color: #007bff; /* 標準的な青 */
+    background-image: linear-gradient(to bottom, #007bff, #0056b3); /* グラデーション */
     color: white;
-    padding: 10px 20px; /* パディングを調整 */
-    border: none;
+    padding: 12px 25px; /* パディングを調整 */
+    border: 1px solid #004085; /* ボーダー */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 13px; /* ボタンのフォントサイズ調整 */
-    transition: background-color 0.3s ease;
+    font-size: 15px; /* ボタンのフォントサイズ調整 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウ */
+    transition: all 0.3s ease; /* スムーズなトランジション */
     width: 150px;
 }
 
 #scan-button:hover,
 #generate-button:hover,
 #import-button:hover {
-    background-color: #0056b3; /* 濃い青 */
+    background-image: linear-gradient(to bottom, #0056b3, #004085); /* ホバー時のグラデーション */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウ */
+    transform: translateY(-2px); /* わずかに持ち上がるエフェクト */
 }
 
 .button-group {
@@ -80,21 +83,24 @@ h1 {
 
 /* 動的に追加されるマスクボタンのスタイル */
 .mask-button-dynamic {
-    background-color: #007bff; /* 標準的な青 */
+    background-image: linear-gradient(to bottom, #ff8c00, #cc7000); /* オレンジ系のグラデーション */
     color: white;
-    padding: 10px 20px; /* パディングを調整 */
-    border: none;
+    padding: 12px 25px; /* パディングを調整 */
+    border: 1px solid #b35900; /* オレンジ系のボーダー */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 13px; /* ボタンのフォントサイズ調整 */
-    transition: background-color 0.3s ease;
+    font-size: 15px; /* ボタンのフォントサイズ調整 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウ */
+    transition: all 0.3s ease;
     display: block;
     margin: 10px auto;
     width: 150px;
 }
 
 .mask-button-dynamic:hover {
-    background-color: #0056b3; /* 濃い青 */
+    background-image: linear-gradient(to bottom, #cc7000, #b35900); /* ホバー時のグラデーション */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウ */
+    transform: translateY(-2px); /* わずかに持ち上がるエフェクト */
 }
 
 .hidden {
@@ -116,7 +122,7 @@ h1 {
 #results-area p {
     margin: 0;
     padding-bottom: 5px;
-    font-size: 13px; /* 結果エリアのテキストフォントサイズ調整 */
+    font-size: 15px; /* 結果エリアのテキストフォントサイズ調整 */
 }
 
 #results-area ul {
@@ -130,5 +136,5 @@ h1 {
     padding: 8px;
     border-radius: 3px;
     word-break: break-all;
-    font-size: 13px; /* リストアイテムのフォントサイズ調整 */
+    font-size: 15px; /* リストアイテムのフォントサイズ調整 */
 }
