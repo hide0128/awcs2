@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credential Scanner</title>
+    <title>AWS Credential Scanner Demo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Credential Scanner</h1>
-        <p class="app-description">Paste your code in the text area below, or import a .txt file, and click "Scan Code" to detect hardcoded AWS credentials.</p>
-        <h2 class="section-title">Code Input</h2>
-        <textarea id="code-input" placeholder="Enter code to scan here..."></textarea>
-        <div class="button-group">
-            <button id="scan-button">Scan Code</button>
-            <input type="file" id="file-input" accept=".txt,.js,.py,.java,.json,.xml,.html,.css" style="display: none;">
-            <button id="import-button">Import</button>
-            <button id="generate-button">Regenerate</button>
-        </div>
-        <h2 class="section-title">Result</h2>
-        <div id="results-area">
-            <p>Scan results will appear here.</p>
-        </div>
+        <h1>AWS Credential Scanner</h1>
+        <input type="file" id="fileInput" multiple>
+        <button id="scanButton">Scan Files</button>
+        <div id="results"></div>
     </div>
     <script src="script.js"></script>
 </body>
