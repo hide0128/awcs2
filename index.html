@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Credential Scanner Demo</title>
+    <title>AWS Credential Scanner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>AWS Credential Scanner</h1>
-        <input type="file" id="fileInput" multiple>
-        <button id="scanButton">Scan Files</button>
-        <div id="results"></div>
+        <p class="app-description">
+            ソースコードや設定ファイルにハードコードされたAWS認証情報をスキャンし、セキュリティリスクを特定します。
+            下のテキストエリアにコードを貼り付けるか、ファイルをインポートしてスキャンを開始してください。
+        </p>
+
+        <div class="section-title">コード入力</div>
+        <textarea id="code-input" placeholder="ここにコードを貼り付け..."></textarea>
+
+        <div class="button-group">
+            <button id="scan-button">スキャン実行</button>
+            <button id="import-button">ファイルからインポート</button>
+            <button id="generate-button">ダミー認証情報を作成</button>
+        </div>
+        
+        <input type="file" id="file-input" class="hidden">
+
+        <div class="section-title">スキャン結果</div>
+        <div id="results-area">
+            <p>スキャン結果はここに表示されます。</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
