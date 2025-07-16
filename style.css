@@ -59,7 +59,6 @@ h1 {
 }
 
 #scan-button,
-#generate-button,
 #import-button {
     background-image: linear-gradient(to bottom, #007bff, #0056b3); /* 青系のグラデーション */
     color: white;
@@ -74,9 +73,27 @@ h1 {
 }
 
 #scan-button:hover,
-#generate-button:hover,
 #import-button:hover {
     background-image: linear-gradient(to bottom, #0056b3, #003f80); /* ホバー時のグラデーション */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウ */
+    transform: translateY(-2px);
+}
+
+#generate-button {
+    background-image: linear-gradient(to bottom, #6c757d, #5a6268); /* 灰色系のグラデーション */
+    color: white;
+    padding: 12px 25px;
+    border: 1px solid #495057; /* 灰色系のボーダー */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウ */
+    transition: all 0.3s ease;
+    width: 150px;
+}
+
+#generate-button:hover {
+    background-image: linear-gradient(to bottom, #5a6268, #495057); /* ホバー時のグラデーション */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウ */
     transform: translateY(-2px);
 }
