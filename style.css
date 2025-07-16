@@ -1,8 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    font-size: 16px; /* 全体的に大きく */
-    background-color: #f0f0f0; /* 非常に薄いグレー */
-    color: #333333; /* 濃いグレー、ほぼ黒 */
+    font-size: 16px;
+    background-color: #f4f7f6; /* 非常に薄いグレー */
+    color: #333333; /* 濃いグレー */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,26 +11,33 @@ body {
 }
 
 .container {
-    background-color: #ffffff; /* 白 */
+    background-color: #ffffff; /* 純粋な白 */
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* シャドウを明るく */
-    width: 800px; /* 固定幅 */
-    min-height: 600px; /* 最小高さ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* シャドウを調整 */
+    width: 800px;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
 h1 {
-    color: #007bff; /* 標準的な青 */
+    color: #0056b3; /* プロフェッショナルな深い青 */
+    margin-bottom: 10px; /* マージンを調整 */
+    font-size: 2.2em; /* h1のフォントサイズ調整 */
+}
+
+.app-description {
+    font-size: 1em; /* 基本フォントサイズ */
+    color: #6c757d; /* セカンダリテキスト色 */
     margin-bottom: 20px;
-    font-size: 2.5em; /* h1のフォントサイズ調整 */
+    line-height: 1.5;
 }
 
 .section-title {
-    color: #333333; /* 濃いグレー、ほぼ黒 */
-    font-size: 1.8em; /* フォントサイズを調整 */
+    color: #333333; /* 濃いグレー */
+    font-size: 1.5em; /* フォントサイズを調整 */
     font-weight: bold;
     margin-top: 25px;
     margin-bottom: 15px;
@@ -40,38 +47,38 @@ h1 {
 #code-input {
     width: calc(100% - 20px);
     height: 200px;
-    background-color: #ffffff; /* 白 */
-    border: 1px solid #cccccc; /* 薄いグレー */
+    background-color: #f8f9fa; /* オフホワイト */
+    border: 1px solid #dee2e6; /* 薄いグレー */
     color: #333333;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
     resize: vertical;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 15px; /* コード入力のフォントサイズ調整 */
+    font-size: 15px;
 }
 
 #scan-button,
 #generate-button,
 #import-button {
-    background-image: linear-gradient(to bottom, #007bff, #0056b3); /* グラデーション */
+    background-image: linear-gradient(to bottom, #007bff, #0056b3); /* 青系のグラデーション */
     color: white;
-    padding: 12px 25px; /* パディングを調整 */
+    padding: 12px 25px;
     border: 1px solid #004085; /* ボーダー */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 15px; /* ボタンのフォントサイズ調整 */
+    font-size: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウ */
-    transition: all 0.3s ease; /* スムーズなトランジション */
+    transition: all 0.3s ease;
     width: 150px;
 }
 
 #scan-button:hover,
 #generate-button:hover,
 #import-button:hover {
-    background-image: linear-gradient(to bottom, #0056b3, #004085); /* ホバー時のグラデーション */
+    background-image: linear-gradient(to bottom, #0056b3, #003f80); /* ホバー時のグラデーション */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウ */
-    transform: translateY(-2px); /* わずかに持ち上がるエフェクト */
+    transform: translateY(-2px);
 }
 
 .button-group {
@@ -83,13 +90,13 @@ h1 {
 
 /* 動的に追加されるマスクボタンのスタイル */
 .mask-button-dynamic {
-    background-image: linear-gradient(to bottom, #ff8c00, #cc7000); /* オレンジ系のグラデーション */
+    background-image: linear-gradient(to bottom, #fd7e14, #e66a00); /* オレンジ系のグラデーション */
     color: white;
-    padding: 12px 25px; /* パディングを調整 */
+    padding: 12px 25px;
     border: 1px solid #b35900; /* オレンジ系のボーダー */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 15px; /* ボタンのフォントサイズ調整 */
+    font-size: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウ */
     transition: all 0.3s ease;
     display: block;
@@ -98,9 +105,9 @@ h1 {
 }
 
 .mask-button-dynamic:hover {
-    background-image: linear-gradient(to bottom, #cc7000, #b35900); /* ホバー時のグラデーション */
+    background-image: linear-gradient(to bottom, #e66a00, #cc5500); /* ホバー時のグラデーション */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* ホバー時のシャドウ */
-    transform: translateY(-2px); /* わずかに持ち上がるエフェクト */
+    transform: translateY(-2px);
 }
 
 .hidden {
@@ -108,8 +115,8 @@ h1 {
 }
 
 #results-area {
-    background-color: #f8f8f8; /* 非常に薄いグレー、わずかにオフホワイト */
-    border: 1px solid #dddddd; /* より明るいグレー */
+    background-color: #ffffff; /* 純粋な白 */
+    border: 1px solid #dee2e6; /* 薄いグレー */
     color: #333333;
     padding: 15px;
     margin-top: 20px;
@@ -122,7 +129,7 @@ h1 {
 #results-area p {
     margin: 0;
     padding-bottom: 5px;
-    font-size: 15px; /* 結果エリアのテキストフォントサイズ調整 */
+    font-size: 15px;
 }
 
 #results-area ul {
@@ -131,10 +138,10 @@ h1 {
 }
 
 #results-area li {
-    background-color: #f0f0f0; /* 結果エリア背景よりわずかに濃いグレー */
+    background-color: #e9ecef; /* 非常に薄いグレー */
     margin-bottom: 5px;
     padding: 8px;
     border-radius: 3px;
     word-break: break-all;
-    font-size: 15px; /* リストアイテムのフォントサイズ調整 */
+    font-size: 15px;
 }

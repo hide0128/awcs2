@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const codeInput = document.getElementById('code-input');
     const scanButton = document.getElementById('scan-button');
-    // const maskButton = document.getElementById('mask-button'); // HTMLから削除されたため不要
     const generateButton = document.getElementById('generate-button');
-    const importButton = document.getElementById('import-button');
+    const importButton = document.getElementById('import-input');
     const fileInput = document.getElementById('file-input');
     const resultsArea = document.getElementById('results-area');
 
@@ -28,23 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return generateRandomString(40, chars);
     }
 
-    const sampleCode = `import boto3
-
-# This is a dummy AWS Access Key ID
-AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
-
-# This is a dummy AWS Secret Access Key
-AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-
-# Some other code
-def get_s3_client():
-    s3 = boto3.client(
-        's3',
-        aws_access_key_id=AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY
-    )
-    return s3
-
+    const sampleCode = `import boto3\n\n# This is a dummy AWS Access Key ID\nAWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"\n\n# This is a dummy AWS Secret Access Key\nAWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"\n\n# Some other code\ndef get_s3_client():\n    s3 = boto3.client(\n        's3',\n        aws_access_key_id=AWS_ACCESS_KEY_ID,\n        aws_secret_access_key=AWS_SECRET_ACCESS_KEY
+    )\n    return s3\n
 # Another line with a similar looking string, but not a key
 SOME_OTHER_ID = "BKIASDFGHJKLMNBVCX"
 SOME_OTHER_SECRET = "abcdefghijklmnopqrstuvwxyz1234567890ABCD"
@@ -103,7 +87,7 @@ PARTIAL_KEY = "AKIA"
         if (foundCredentialsGlobal.length > 0) {
             let resultsHtml = '<p>Credentials found:</p><ul>';
             foundCredentialsGlobal.forEach(cred => {
-                resultsHtml += `<li><strong>${cred.type}</strong>: ${cred.value} (行: ${cred.lineNumber})</li>`;
+                resultsHtml += `<li><strong>${cred.type}</strong>: ${cred.value} (Line: ${cred.lineNumber})</li>`;
             });
             resultsHtml += '</ul>';
             resultsArea.innerHTML = resultsHtml;
@@ -127,7 +111,13 @@ PARTIAL_KEY = "AKIA"
                     let maskedValue;
                     if (cred.type === 'Access Key ID') {
                         maskedValue = cred.value.substring(0, 4) + '****************'; // AKIA + 16個のアスタリスク
-                    } else if (cred.type === 'Secret Access Key') {
+                    }
+                    // シークレットアクセスキーは単独で存在することが少ないため、
+                    // より厳密なパターンが必要な場合があるが、ここでは一般的な40文字のパターンを使用
+                    // 注意: この正規表現は誤検知が多い可能性があります。
+                    // 実際のAWSシークレットキーはBase64エンコードされた40文字の文字列です。
+                    // より正確な検出には、周辺のコンテキストも考慮する必要があります。
+                    else if (cred.type === 'Secret Access Key') {
                         maskedValue = cred.value.substring(0, 8) + '********************************'; // 最初の8文字 + 32個のアスタリスク
                     }
 
@@ -147,7 +137,7 @@ PARTIAL_KEY = "AKIA"
             });
 
         } else {
-            resultsArea.innerHTML = '<p>認証情報は見つかりませんでした。</p>';
+            resultsArea.innerHTML = '<p>No credentials found.</p>';
         }
     });
 
