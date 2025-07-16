@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credential Scanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Credential Scanner</h1>
+        <h2 class="section-title">Code Input</h2>
+        <textarea id="code-input" placeholder="ここにスキャンしたいコードを入力してください..."></textarea>
+        <div class="button-group">
+            <button id="scan-button">Scan Code</button>
+            <input type="file" id="file-input" accept=".txt,.js,.py,.java,.json,.xml,.html,.css" style="display: none;">
+            <button id="import-button">Import</button>
+            <button id="generate-button">Generate</button>
+        </div>
+        <h2 class="section-title">Result</h2>
+        <div id="results-area">
+            <p>スキャン結果がここに表示されます。</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

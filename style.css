@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* 全体的に小さく */
+    background-color: #f0f0f0; /* 非常に薄いグレー */
+    color: #333333; /* 濃いグレー、ほぼ黒 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff; /* 白 */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* シャドウを明るく */
+    width: 800px; /* 固定幅 */
+    min-height: 600px; /* 最小高さ */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1 {
+    color: #007bff; /* 標準的な青 */
+    margin-bottom: 20px;
+    font-size: 2.2em; /* h1のフォントサイズ調整 */
+}
+
+.section-title {
+    color: #333333; /* 濃いグレー、ほぼ黒 */
+    font-size: 1.6em; /* フォントサイズを調整 */
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+#code-input {
+    width: calc(100% - 20px);
+    height: 200px;
+    background-color: #ffffff; /* 白 */
+    border: 1px solid #cccccc; /* 薄いグレー */
+    color: #333333;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px; /* コード入力のフォントサイズ調整 */
+}
+
+#scan-button,
+#generate-button,
+#import-button {
+    background-color: #007bff; /* 標準的な青 */
+    color: white;
+    padding: 10px 20px; /* パディングを調整 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px; /* ボタンのフォントサイズ調整 */
+    transition: background-color 0.3s ease;
+    width: 150px;
+}
+
+#scan-button:hover,
+#generate-button:hover,
+#import-button:hover {
+    background-color: #0056b3; /* 濃い青 */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* 動的に追加されるマスクボタンのスタイル */
+.mask-button-dynamic {
+    background-color: #007bff; /* 標準的な青 */
+    color: white;
+    padding: 10px 20px; /* パディングを調整 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px; /* ボタンのフォントサイズ調整 */
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+}
+
+.mask-button-dynamic:hover {
+    background-color: #0056b3; /* 濃い青 */
+}
+
+.hidden {
+    display: none;
+}
+
+#results-area {
+    background-color: #f8f8f8; /* 非常に薄いグレー、わずかにオフホワイト */
+    border: 1px solid #dddddd; /* より明るいグレー */
+    color: #333333;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+    text-align: left;
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+#results-area p {
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 13px; /* 結果エリアのテキストフォントサイズ調整 */
+}
+
+#results-area ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#results-area li {
+    background-color: #f0f0f0; /* 結果エリア背景よりわずかに濃いグレー */
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 3px;
+    word-break: break-all;
+    font-size: 13px; /* リストアイテムのフォントサイズ調整 */
+}
