@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const codeInput = document.getElementById('code-input');
     const scanButton = document.getElementById('scan-button');
     const generateButton = document.getElementById('generate-button');
-    const importButton = document.getElementById('import-input');
+    const importButton = document.getElementById('import-button');
     const fileInput = document.getElementById('file-input');
     const resultsArea = document.getElementById('results-area');
 
