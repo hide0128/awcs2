@@ -127,6 +127,52 @@ h1 {
     transform: translateY(-2px);
 }
 
+.export-button {
+    background-image: linear-gradient(to bottom, #28a745, #218838); /* 緑系のグラデーション */
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #1e7e34;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.export-button:hover {
+    background-image: linear-gradient(to bottom, #218838, #1e7e34);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+#post-mask-actions button {
+    background-image: linear-gradient(to bottom, #17a2b8, #138496); /* ティール系のグラデーション */
+    color: white;
+    padding: 12px 25px;
+    border: 1px solid #117a8b;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#post-mask-actions button:hover {
+    background-image: linear-gradient(to bottom, #138496, #117a8b);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
 .hidden {
     display: none;
 }

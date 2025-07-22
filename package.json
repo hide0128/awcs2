@@ -1,0 +1,26 @@
+{
+  "name": "awcs2",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hide0128/awcs2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hide0128/awcs2/issues"
+  },
+  "homepage": "https://github.com/hide0128/awcs2#readme",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.31.0",
+    "globals": "^16.3.0"
+  }
+}
